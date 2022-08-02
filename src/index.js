@@ -22,10 +22,21 @@ const showGameResult = (username, results) => (
     : console.log(`Congratulations, ${username}!`)
 );
 
-export default (questions, correctAnswers) => {
+export default (typeGame, questions, correctAnswers) => {
   const username = greeting();
-  const levelsResult = [];
 
+  switch (typeGame) {
+    case 'calc':
+      console.log('What is the result of the expression?');
+      break;
+    case 'even':
+      console.log('Answer "yes" if the number is even, otherwise answer "no".');
+      break;
+    default:
+      return null;
+  }
+
+  const levelsResult = [];
   for (let counter = 0; counter < 3; counter += 1) {
     const question = questions[counter];
     const correctAnswer = correctAnswers[counter];
