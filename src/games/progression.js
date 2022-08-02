@@ -4,7 +4,7 @@ const iter = (nums, start, step, maxSize) => {
   if (nums.length > maxSize) return nums;
   nums.push(start + step);
 
-  return iter(nums, start + step, step);
+  return iter(nums, start + step, step, maxSize);
 };
 
 export default () => {
