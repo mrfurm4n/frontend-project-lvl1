@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import startGreeting from '../src/cli.js';
+import startBrainsGame from '../src/games/games.js';
 
-startGreeting();
+startBrainsGame();
