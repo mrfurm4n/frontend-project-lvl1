@@ -9,8 +9,9 @@ const iter = (counter, firstNum, secondNum) => {
 };
 
 export default () => {
-  const firstRandomNums = [getRandomInt(), getRandomInt(), getRandomInt()];
-  const secondRandomNums = [getRandomInt(), getRandomInt(), getRandomInt()];
+  const maxQuestion = 3;
+  const firstRandomNums = [...Array(maxQuestion)].map(() => (getRandomInt()));
+  const secondRandomNums = [...Array(maxQuestion)].map(() => (getRandomInt()));
 
   const maxFirstsNum = Math.max.apply(null, firstRandomNums);
   const maxSecondsNum = Math.max.apply(null, secondRandomNums);

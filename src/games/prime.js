@@ -10,8 +10,12 @@ const iter = (divisor, num) => {
 export default () => {
   const correctAnswers = [];
 
-  const questions = [...Array(3)].map(() => {
-    const randomNumber = getRandomInt(100, 2);
+  const maxQuestion = 3;
+  const maxRandomNumber = 100;
+  const minRandomNumber = 2;
+
+  const questions = [...Array(maxQuestion)].map(() => {
+    const randomNumber = getRandomInt(maxRandomNumber, minRandomNumber);
     const isPrime = iter(randomNumber - 1, randomNumber);
 
     correctAnswers.push(isPrime ? 'yes' : 'no');

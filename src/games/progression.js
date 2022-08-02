@@ -1,7 +1,7 @@
 import getRandomInt from '../utils/random.js';
 
-const iter = (nums, start, step) => {
-  if (nums.length > 10) return nums;
+const iter = (nums, start, step, maxSize) => {
+  if (nums.length > maxSize) return nums;
   nums.push(start + step);
 
   return iter(nums, start + step, step);
@@ -10,12 +10,18 @@ const iter = (nums, start, step) => {
 export default () => {
   const correctAnswers = [];
 
-  const questions = [...Array(3)].map(() => {
-    const progressStart = getRandomInt(10);
-    const progressStep = getRandomInt(10, 1);
-    const randomPosition = getRandomInt(9);
+  const maxQuestion = 3;
+  const maxProgressStart = 10;
+  const maxProgressStep = 10;
+  const minProgressStep = 1;
+  const maxProgressSize = 10;
 
-    const progressNums = iter([], progressStart, progressStep);
+  const questions = [...Array(maxQuestion)].map(() => {
+    const progressStart = getRandomInt(maxProgressStart);
+    const progressStep = getRandomInt(maxProgressStep, minProgressStep);
+    const randomPosition = getRandomInt(maxProgressSize - 1);
+
+    const progressNums = iter([], progressStart, progressStep, maxProgressSize);
     const correctAnswer = String(progressNums[randomPosition]);
 
     correctAnswers.push(correctAnswer);
