@@ -6,7 +6,6 @@ export default () => {
   const firstRandomOperands = [getRandomInt(), getRandomInt(), getRandomInt()];
   const secondRandomOperands = [getRandomInt(), getRandomInt(), getRandomInt()];
 
-  // const correctAnswers = [];
   const questions = firstRandomOperands.map((el, index) => {
     const randomOperation = operations[getRandomInt(2)];
     const secondOperand = secondRandomOperands[index];

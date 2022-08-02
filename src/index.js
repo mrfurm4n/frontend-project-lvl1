@@ -32,6 +32,9 @@ export default (typeGame, questions, correctAnswers) => {
     case 'even':
       console.log('Answer "yes" if the number is even, otherwise answer "no".');
       break;
+    case 'gcd':
+      console.log('Find the greatest common divisor of given numbers.');
+      break;
     default:
       return null;
   }
