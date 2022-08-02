@@ -35,6 +35,9 @@ export default (typeGame, questions, correctAnswers) => {
     case 'gcd':
       console.log('Find the greatest common divisor of given numbers.');
       break;
+    case 'progression':
+      console.log('What number is missing in the progression?');
+      break;
     default:
       return null;
   }
