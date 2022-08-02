@@ -1,4 +1,3 @@
-import initGame from '../index.js';
 import getRandomInt from '../utils/random.js';
 
 const iter = (divisor, num) => {
@@ -20,5 +19,8 @@ export default () => {
     return randomNumber;
   });
 
-  initGame('prime', questions, correctAnswers);
+  return {
+    questionsList: questions,
+    answersList: correctAnswers,
+  };
 };

@@ -1,4 +1,3 @@
-import initGame from '../index.js';
 import getRandomInt from '../utils/random.js';
 
 export default () => {
@@ -16,5 +15,8 @@ export default () => {
   // eslint-disable-next-line no-eval
   const correctAnswers = questions.map((el) => String(eval(el)));
 
-  initGame('calc', questions, correctAnswers);
+  return {
+    questionsList: questions,
+    answersList: correctAnswers,
+  };
 };

@@ -1,4 +1,3 @@
-import initGame from '../index.js';
 import getRandomInt from '../utils/random.js';
 
 const iter = (counter, firstNum, secondNum) => {
@@ -26,5 +25,8 @@ export default () => {
     return iter(maxNumber, firstNum, secondNum);
   });
 
-  initGame('gcd', questions, correctAnswers);
+  return {
+    questionsList: questions,
+    answersList: correctAnswers,
+  };
 };

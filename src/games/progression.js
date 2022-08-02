@@ -1,4 +1,3 @@
-import initGame from '../index.js';
 import getRandomInt from '../utils/random.js';
 
 const iter = (nums, start, step) => {
@@ -25,5 +24,8 @@ export default () => {
     return progressNums.join(' ');
   });
 
-  initGame('gcd', questions, correctAnswers);
+  return {
+    questionsList: questions,
+    answersList: correctAnswers,
+  };
 };
